@@ -458,12 +458,7 @@ func decodeContent(content io.Reader, encoding string) (io.Reader, error) {
 	// "8bit" means that the lines are short, but there may be non-ASCII characters (octets with the high-order bit set).
 	// "Binary" means that not only may non-ASCII characters be present, but also that the lines are not necessarily short enough for SMTP transport.
 	case "", "7bit", "8bit", "binary":
-		decoded := quotedprintable.NewReader(content)
-		b, err := io.ReadAll(decoded)
-		if err != nil {
-			return nil, err
-		}
-		return bytes.NewReader(b), nil
+		return content, nil
 	default:
 		return nil, fmt.Errorf("unknown encoding: %s", encoding)
 	}
