@@ -1,9 +1,5 @@
 # Parsemail - simple email parsing Go library
 
-[![test](https://github.com/k3a/parsemail/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/k3a/parsemail/actions/workflows/test.yml)
-[![coverage](https://raw.githubusercontent.com/k3a/parsemail/badges/.badges/master/coverage.svg)](https://github.com/k3a/parsemail/tree/badges)
-[![Go Report Card](https://goreportcard.com/badge/github.com/k3a/parsemail)](https://goreportcard.com/report/github.com/k3a/parsemail)
-
 > The [original repo](https://github.com/DusanKasan/parsemail) is unmaintained. This is an active fork replacing the original repo. Contributions are welcome.
 
 This library allows for parsing an email message into a more convenient form than the `net/mail` provides. Where the `net/mail` just gives you a map of header fields and a `io.Reader` of its body, Parsemail allows access to all the standard header fields set in [RFC5322](https://tools.ietf.org/html/rfc5322), html/text body as well as attachements/embedded content as binary streams with metadata.
